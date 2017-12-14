@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>Document</title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="layer/layer.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="layer/mobile/layer.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<script src="http://192.168.1.111:8888/target/target-script-min.js#anonymous"></script>
+		<style type="text/css">
+			p {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<p>0</p>
+		<div style="min-height: 10000px;">
+
+		</div>
+
+		<script type="text/javascript">
+			$(window).scroll(function(event) {
+				$('p').html(window.pageYOffset);
+			});
+		</script>
+
+	</body>
+
+</html>

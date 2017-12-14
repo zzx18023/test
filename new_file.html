@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function 打开文件() {
+				return new Promise(function(resolve, reject) {
+					console.log('打开文件中...');
+					setTimeout(function() {
+						if(1) {
+							resolve('打开文件成功');
+						} else {
+							reject('打开文件失败');
+						};
+					}, 1000);
+				});
+			};
+
+			function 写入数据() {
+				return new Promise(function(resolve, reject) {
+					console.log('写入数据中...');
+					setTimeout(function() {
+						if(1) {
+							resolve('写入数据成功');
+						} else {
+							reject('写入数据失败');
+						};
+					}, 1000);
+				});
+			};
+
+			function 关闭文件() {
+				return new Promise(function(resolve, reject) {
+					console.log('关闭文件中...');
+					setTimeout(function() {
+						if(1) {
+							resolve('关闭文件成功');
+						} else {
+							reject('关闭文件失败');
+						};
+					}, 1000);
+				});
+			};
+
+			打开文件().then(function(data) {
+				console.log(data);
+				return 写入数据();
+			}).then(function(data) {
+				console.log(data);
+				return 关闭文件();
+			}, function(error) {
+				console.error(error);
+				return 关闭文件();
+			}).then(function(data) {
+				console.log(data);
+			}, function(error) {
+				console.error(error);
+			})
+		</script>
+
+	</body>
+
+</html>
